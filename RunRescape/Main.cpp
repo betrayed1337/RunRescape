@@ -1,12 +1,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
 #include <iostream>
 
+int appStart();
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
-int appStart();
-
 
 int main()
 {
@@ -17,8 +15,8 @@ int main()
 int appStart() {
 
 	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	GLFWwindow* window = glfwCreateWindow(800, 600, "RunRescape", NULL, NULL);
@@ -39,12 +37,14 @@ int appStart() {
 
 	while (!glfwWindowShouldClose(window))
 	{
-		//processInput(window);
+		processInput(window);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
+
 	glfwTerminate();
+
 }
 
 void processInput(GLFWwindow *window)
