@@ -1,0 +1,12 @@
+# ignore all logs
+*.log
+*.tlog
+
+# ignore vs folder
+.vs/
+
+#ignore solution file
+*.sln
+
+#ignore debug folder
+debug/
